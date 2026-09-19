@@ -48,14 +48,14 @@ class ProjectAdminController extends Controller
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required'],
             'slug' => ['nullable', 'string', 'max:255', 'unique:projects,slug'],
-            'summary' => ['required', 'string', 'max:300'],
-            'description' => ['nullable', 'string'],
+            'summary' => ['required'],
+            'description' => ['nullable'],
             'highlights' => ['nullable', 'array'],
             'highlights.*' => ['string'],
             'category' => ['required', 'in:erp,web,mobile'],
-            'role' => ['nullable', 'string', 'max:255'],
+            'role' => ['nullable'],
             'stack' => ['nullable', 'array'],
             'stack.*' => ['string'],
             'thumbnail_path' => ['nullable', 'string', 'max:255'],
@@ -69,8 +69,13 @@ class ProjectAdminController extends Controller
         ]);
 
         if (empty($validated['slug'])) {
-            $validated['slug'] = \Illuminate\Support\Str::slug($validated['title']);
-            // Unikkan slug jika sudah digunakan
+            $slugTitle = is_array($validated['title'])
+                ? ($validated['title']['id'] ?? $validated['title']['en'] ?? reset($validated['title']) ?? 'project')
+                : $validated['title'];
+            $validated['slug'] = \Illuminate\Support\Str::slug((string) $slugTitle);
+            if (empty($validated['slug'])) {
+                $validated['slug'] = 'project-' . time();
+            }
             $originalSlug = $validated['slug'];
             $count = 1;
             while (Project::where('slug', $validated['slug'])->exists()) {
@@ -93,14 +98,14 @@ class ProjectAdminController extends Controller
         $project = Project::findOrFail($id);
 
         $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required'],
             'slug' => ['required', 'string', 'max:255', "unique:projects,slug,{$id}"],
-            'summary' => ['required', 'string', 'max:300'],
-            'description' => ['nullable', 'string'],
+            'summary' => ['required'],
+            'description' => ['nullable'],
             'highlights' => ['nullable', 'array'],
             'highlights.*' => ['string'],
             'category' => ['required', 'in:erp,web,mobile'],
-            'role' => ['nullable', 'string', 'max:255'],
+            'role' => ['nullable'],
             'stack' => ['nullable', 'array'],
             'stack.*' => ['string'],
             'thumbnail_path' => ['nullable', 'string', 'max:255'],
@@ -156,10 +161,10 @@ class ProjectAdminController extends Controller
         $data = [
             'id' => $p->id,
             'slug' => $p->slug,
-            'title' => $p->title,
-            'summary' => $p->summary,
+            'title' => $p->getTranslations('title'),
+            'summary' => $p->getTranslations('summary'),
             'category' => $p->category,
-            'role' => $p->role,
+            'role' => $p->getTranslations('role'),
             'stack' => $p->stack ?? [],
             'thumbnail_path' => $p->thumbnail_path,
             'thumbnail_url' => $p->thumbnailUrl(),
@@ -175,7 +180,7 @@ class ProjectAdminController extends Controller
         ];
 
         if ($includeDetails) {
-            $data['description'] = $p->description;
+            $data['description'] = $p->getTranslations('description');
             $data['highlights'] = $p->highlights ?? [];
             $data['images'] = $p->relationLoaded('images')
                 ? $p->images->map(fn($img) => ['id' => $img->id, 'url' => $img->url(), 'caption' => $img->caption])->values()

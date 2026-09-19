@@ -32,7 +32,11 @@ class PortfolioSeeder extends Seeder
         );
 
         DB::transaction(function () use ($data) {
-            Project::query()->delete(); // project_images ikut terhapus (cascade)
+            $hasProjects = Project::query()->exists();
+
+            if (!$hasProjects) {
+                Project::query()->delete(); // project_images ikut terhapus (cascade)
+            }
             Skill::query()->delete();
             Experience::query()->delete();
             Education::query()->delete();
@@ -64,34 +68,36 @@ class PortfolioSeeder extends Seeder
                 Skill::create([...Arr::only($s, ['name', 'category']), 'sort_order' => $i]);
             }
 
-            foreach ($data['projects'] as $i => $pr) {
-                $project = Project::create([
-                    ...Arr::only($pr, [
-                        'slug',
-                        'title',
-                        'summary',
-                        'description',
-                        'highlights',
-                        'category',
-                        'role',
-                        'stack',
-                        'year',
-                        'is_featured',
-                        'is_confidential',
-                    ]),
-                    'thumbnail_path' => $pr['thumbnail_url'] ?: null,
-                    'repo_url' => $pr['repo_url'] ?: null,
-                    'demo_url' => $pr['demo_url'] ?: null,
-                    'status' => 'published',
-                    'sort_order' => $i,
-                ]);
-
-                foreach ($pr['images'] ?? [] as $j => $img) {
-                    $project->images()->create([
-                        'path' => $img['url'],
-                        'caption' => $img['caption'] ?? null,
-                        'sort_order' => $j,
+            if (!$hasProjects) {
+                foreach ($data['projects'] as $i => $pr) {
+                    $project = Project::create([
+                        ...Arr::only($pr, [
+                            'slug',
+                            'title',
+                            'summary',
+                            'description',
+                            'highlights',
+                            'category',
+                            'role',
+                            'stack',
+                            'year',
+                            'is_featured',
+                            'is_confidential',
+                        ]),
+                        'thumbnail_path' => $pr['thumbnail_url'] ?: null,
+                        'repo_url' => $pr['repo_url'] ?: null,
+                        'demo_url' => $pr['demo_url'] ?: null,
+                        'status' => 'published',
+                        'sort_order' => $i,
                     ]);
+
+                    foreach ($pr['images'] ?? [] as $j => $img) {
+                        $project->images()->create([
+                            'path' => $img['url'],
+                            'caption' => $img['caption'] ?? null,
+                            'sort_order' => $j,
+                        ]);
+                    }
                 }
             }
 

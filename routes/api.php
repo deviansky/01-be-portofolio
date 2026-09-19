@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\AdminMessageController;
 use App\Http\Controllers\Api\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Api\Admin\UploadController as AdminUploadController;
 use App\Http\Controllers\Api\Auth\AuthController;
@@ -23,6 +24,13 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/projects/{id}', [AdminProjectController::class, 'destroy']);
 
         Route::post('/uploads', [AdminUploadController::class, 'store']);
+
+        // Contact Messages Endpoints
+        Route::get('/messages', [AdminMessageController::class, 'index']);
+        Route::get('/messages/unread-count', [AdminMessageController::class, 'unreadCount']);
+        Route::get('/messages/{id}', [AdminMessageController::class, 'show']);
+        Route::patch('/messages/{id}/toggle-read', [AdminMessageController::class, 'toggleRead']);
+        Route::delete('/messages/{id}', [AdminMessageController::class, 'destroy']);
     });
 });
 

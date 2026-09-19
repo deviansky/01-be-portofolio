@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Models\Project;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class StoreProjectRequest extends FormRequest
 {
@@ -11,15 +13,49 @@ class StoreProjectRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation(): void
+    {
+        if (empty($this->slug) && ! empty($this->title)) {
+            $this->merge([
+                'slug' => static::generateUniqueSlug($this->title),
+            ]);
+        }
+    }
+
+    public static function generateUniqueSlug(string $title, $ignoreId = null): string
+    {
+        $baseSlug = Str::slug($title) ?: 'proyek';
+        $slug = $baseSlug;
+        $count = 1;
+
+        $query = Project::query()->where('slug', $slug);
+        if ($ignoreId) {
+            $id = is_object($ignoreId) ? $ignoreId->id : $ignoreId;
+            $query->where('id', '!=', $id);
+        }
+
+        while ($query->exists()) {
+            $count++;
+            $slug = "{$baseSlug}-{$count}";
+            $query = Project::query()->where('slug', $slug);
+            if ($ignoreId) {
+                $id = is_object($ignoreId) ? $ignoreId->id : $ignoreId;
+                $query->where('id', '!=', $id);
+            }
+        }
+
+        return $slug;
+    }
+
     public function rules(): array
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'slug' => ['required', 'string', 'max:255', 'unique:projects,slug'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:projects,slug'],
             'summary' => ['required', 'string', 'max:500'],
             'description' => ['nullable', 'string'],
             'category' => ['required', 'string', 'max:50'],
-            'role' => ['required', 'string', 'max:100'],
+            'role' => ['nullable', 'string', 'max:100'],
             'year' => ['required', 'integer', 'min:2000', 'max:2100'],
             'stack' => ['nullable', 'array'],
             'highlights' => ['nullable', 'array'],
@@ -35,3 +71,4 @@ class StoreProjectRequest extends FormRequest
         ];
     }
 }
+

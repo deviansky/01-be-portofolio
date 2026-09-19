@@ -12,6 +12,18 @@ class UpdateProjectRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation(): void
+    {
+        $routeParam = $this->route('id') ?? $this->route('project');
+        $projectId = is_object($routeParam) ? $routeParam->id : $routeParam;
+
+        if (empty($this->slug) && ! empty($this->title)) {
+            $this->merge([
+                'slug' => StoreProjectRequest::generateUniqueSlug($this->title, $projectId),
+            ]);
+        }
+    }
+
     public function rules(): array
     {
         $routeParam = $this->route('id') ?? $this->route('project');
@@ -19,11 +31,11 @@ class UpdateProjectRequest extends FormRequest
 
         return [
             'title' => ['required', 'string', 'max:255'],
-            'slug' => ['required', 'string', 'max:255', Rule::unique('projects', 'slug')->ignore($projectId)],
+            'slug' => ['nullable', 'string', 'max:255', Rule::unique('projects', 'slug')->ignore($projectId)],
             'summary' => ['required', 'string', 'max:500'],
             'description' => ['nullable', 'string'],
             'category' => ['required', 'string', 'max:50'],
-            'role' => ['required', 'string', 'max:100'],
+            'role' => ['nullable', 'string', 'max:100'],
             'year' => ['required', 'integer', 'min:2000', 'max:2100'],
             'stack' => ['nullable', 'array'],
             'highlights' => ['nullable', 'array'],
@@ -39,3 +51,4 @@ class UpdateProjectRequest extends FormRequest
         ];
     }
 }
+

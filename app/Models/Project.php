@@ -6,12 +6,19 @@ use App\Models\Concerns\ResolvesMediaUrl;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Translatable\HasTranslations;
 
 class Project extends Model
 {
-    use HasFactory, ResolvesMediaUrl;
+    use HasFactory, ResolvesMediaUrl, HasTranslations;
+
+    public array $translatable = [
+        'title',
+        'summary',
+        'role',
+        'description',
+    ];
 
     protected $fillable = [
         'slug',

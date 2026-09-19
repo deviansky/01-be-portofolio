@@ -15,9 +15,12 @@ class StoreProjectRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        if (empty($this->slug) && ! empty($this->title)) {
+        $titleVal = $this->input('title');
+        $titleString = is_array($titleVal) ? ($titleVal['id'] ?? $titleVal['en'] ?? '') : $titleVal;
+
+        if (empty($this->slug) && ! empty($titleString)) {
             $this->merge([
-                'slug' => static::generateUniqueSlug($this->title),
+                'slug' => static::generateUniqueSlug($titleString),
             ]);
         }
     }
@@ -50,12 +53,16 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required'],
+            'title.id' => ['required_if_is_array:title', 'nullable', 'string', 'max:255'],
+            'title.en' => ['nullable', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', 'unique:projects,slug'],
-            'summary' => ['required', 'string', 'max:500'],
-            'description' => ['nullable', 'string'],
+            'summary' => ['required'],
+            'summary.id' => ['required_if_is_array:summary', 'nullable', 'string'],
+            'summary.en' => ['nullable', 'string'],
+            'description' => ['nullable'],
             'category' => ['required', 'string', 'max:50'],
-            'role' => ['nullable', 'string', 'max:100'],
+            'role' => ['nullable'],
             'year' => ['required', 'integer', 'min:2000', 'max:2100'],
             'stack' => ['nullable', 'array'],
             'highlights' => ['nullable', 'array'],
@@ -71,4 +78,3 @@ class StoreProjectRequest extends FormRequest
         ];
     }
 }
-

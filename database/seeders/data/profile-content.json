@@ -1,0 +1,129 @@
+{
+  "_catatan": "Isi dwibahasa untuk Profil, Keahlian, Pengalaman, dan Pendidikan, berdasarkan data yang sedang dipakai. Field terjemahan berbentuk {\"id\": ..., \"en\": ...}. Proyek TIDAK ada di file ini.",
+
+  "profile": {
+    "name": "David Reza Widhiwipati",
+    "short_name": "David Reza W.",
+    "headline": { "id": "Fullstack Developer", "en": "Fullstack Developer" },
+    "tagline": {
+      "id": "Saya seorang software developer yang berfokus pada pengembangan aplikasi web dan mobile, dengan pengalaman membangun solusi digital untuk mendukung kebutuhan dan proses bisnis.",
+      "en": "I am a software developer focused on web and mobile application development, with experience building digital solutions that support business needs and processes."
+    },
+    "bio": {
+      "id": [
+        "Fullstack developer yang terbiasa dengan sistem berskala perusahaan. Sehari-hari saya mengerjakan modul ERP dengan Laravel dan React, aplikasi mobile React Native untuk tim sales di lapangan, sekaligus menjadi maintainer dan code reviewer lintas proyek.",
+        "Saya menempuh pendidikan D4 Teknologi Rekayasa Perangkat Lunak di Sekolah Vokasi IPB University."
+      ],
+      "en": [
+        "A fullstack developer experienced with enterprise-scale systems. My day-to-day work covers ERP modules built with Laravel and React, React Native mobile apps for field sales teams, and serving as a maintainer and code reviewer across projects.",
+        "I studied Software Engineering Technology (D4, Bachelor of Applied Science) at the School of Vocational Studies, IPB University."
+      ]
+    },
+    "focus_areas": {
+      "id": [
+        { "title": "Modul ERP", "detail": "Laravel + React" },
+        { "title": "Aplikasi tim lapangan", "detail": "React Native" },
+        { "title": "Platform CRM", "detail": "Web" }
+      ],
+      "en": [
+        { "title": "ERP modules", "detail": "Laravel + React" },
+        { "title": "Field team apps", "detail": "React Native" },
+        { "title": "CRM platforms", "detail": "Web" }
+      ]
+    },
+    "location": { "id": "Indonesia", "en": "Indonesia" },
+    "languages": {
+      "id": ["Indonesia (aktif)", "Inggris (menengah)"],
+      "en": ["Indonesian (fluent)", "English (intermediate)"]
+    },
+    "email": "",
+    "phone": "",
+    "avatar_url": "",
+    "cv_url": "",
+    "socials": { "github": "", "linkedin": "", "instagram": "" },
+    "available_for_work": true
+  },
+
+  "skills": [
+    { "name": { "id": "React", "en": "React" }, "category": "frontend" },
+    { "name": { "id": "Tailwind CSS", "en": "Tailwind CSS" }, "category": "frontend" },
+    { "name": { "id": "Node.js", "en": "Node.js" }, "category": "backend" },
+    { "name": { "id": "Express.js", "en": "Express.js" }, "category": "backend" },
+    { "name": { "id": "Flask", "en": "Flask" }, "category": "backend" },
+    { "name": { "id": "Power BI", "en": "Power BI" }, "category": "visual_data" },
+    { "name": { "id": "Python", "en": "Python" }, "category": "ml_cv" },
+    { "name": { "id": "TensorFlow", "en": "TensorFlow" }, "category": "ml_cv" },
+    { "name": { "id": "OpenCV", "en": "OpenCV" }, "category": "ml_cv" },
+    { "name": { "id": "Git", "en": "Git" }, "category": "tools" },
+    { "name": { "id": "Unity", "en": "Unity" }, "category": "tools" },
+    { "name": { "id": "Figma", "en": "Figma" }, "category": "tools" },
+    { "name": { "id": "Belajar mandiri", "en": "Self-learning" }, "category": "soft_skill" },
+    { "name": { "id": "Kerja sama tim", "en": "Teamwork & collaboration" }, "category": "soft_skill" },
+    { "name": { "id": "Komunikasi", "en": "Communication" }, "category": "soft_skill" }
+  ],
+
+  "experiences": [
+    {
+      "company": "Univerz Teknologi Utama",
+      "position": { "id": "Full Stack Developer", "en": "Full Stack Developer" },
+      "employment_type": { "id": "Purnawaktu", "en": "Full-time" },
+      "location": { "id": "Jakarta Raya, Indonesia", "en": "Greater Jakarta, Indonesia" },
+      "work_mode": { "id": "Di lokasi", "en": "On-site" },
+      "logo_url": null,
+      "started_at": "2026-01-01",
+      "ended_at": null,
+      "is_current": true,
+      "description": {
+        "id": "Saat ini, saya bekerja di Univerz dengan tanggung jawab utama mengelola dan memelihara ekosistem website perusahaan.",
+        "en": "I currently work at Univerz, where my main responsibility is managing and maintaining the company's website ecosystem."
+      },
+      "highlights": [],
+      "skills": ["Full-Stack Development", "React.js"]
+    },
+    {
+      "company": "PT Mitra Indo Maju",
+      "position": { "id": "Mobile Application Developer (Magang)", "en": "Mobile Application Developer Intern" },
+      "employment_type": { "id": "Magang", "en": "Internship" },
+      "location": { "id": "Jakarta Raya, Indonesia", "en": "Greater Jakarta, Indonesia" },
+      "work_mode": { "id": "Di lokasi", "en": "On-site" },
+      "logo_url": null,
+      "started_at": "2025-06-01",
+      "ended_at": "2025-12-31",
+      "is_current": false,
+      "description": {
+        "id": "Sebagai Mobile Developer Intern di PT Mitra Indo Maju, saya bertanggung jawab merombak total antarmuka aplikasi seluler secara end-to-end.",
+        "en": "As a Mobile Developer Intern at PT Mitra Indo Maju, I was responsible for a complete end-to-end overhaul of the mobile app's interface."
+      },
+      "highlights": [],
+      "skills": ["Mobile Application Development", "Mobile Applications"]
+    }
+  ],
+
+  "educations": [
+    {
+      "institution": "IPB University",
+      "degree": { "id": "D4 Teknologi Rekayasa Perangkat Lunak", "en": "Bachelor of Applied Science (D4) in Software Engineering Technology" },
+      "field": null,
+      "logo_url": null,
+      "started_at": "2022-08-01",
+      "ended_at": "2026-08-31",
+      "description": {
+        "id": "Mahasiswa Teknologi Rekayasa Perangkat Lunak di IPB University yang memiliki ketertarikan kuat pada perpaduan pemrograman dan desain multimedia.",
+        "en": "Software Engineering Technology student at IPB University with a strong interest in combining programming and multimedia design."
+      },
+      "skills": ["Front-End Development", "Back-End Web Development"]
+    },
+    {
+      "institution": "SMAN 1 Jawilan",
+      "degree": { "id": "SMA IPA", "en": "Senior High School, Natural Sciences" },
+      "field": null,
+      "logo_url": null,
+      "started_at": "2018-04-01",
+      "ended_at": "2022-05-31",
+      "description": null,
+      "skills": []
+    }
+  ],
+
+  "certifications": []
+}

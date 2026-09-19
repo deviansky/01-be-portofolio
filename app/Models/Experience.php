@@ -3,9 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Experience extends Model
 {
+    use HasTranslations;
+
+    public array $translatable = [
+        'position',
+        'employment_type',
+        'location',
+        'work_mode',
+        'description',
+    ];
+
     protected $fillable = [
         'company',
         'position',

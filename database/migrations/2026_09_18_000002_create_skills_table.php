@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('category', ['frontend', 'backend', 'mobile', 'database', 'tools']);
+            $table->string('category', 50);
             $table->unsignedSmallInteger('sort_order')->default(0);
             $table->timestamps();
 

@@ -51,14 +51,12 @@ class AdminProjectTest extends TestCase
         ];
 
         $response = $this->postJson('/api/admin/projects', $payload);
-
         $response->assertStatus(201)
-            ->assertJsonPath('data.title', 'Project Alpha')
+            ->assertJsonPath('data.title.id', 'Project Alpha')
             ->assertJsonPath('data.slug', 'project-alpha');
 
         $this->assertDatabaseHas('projects', [
             'slug' => 'project-alpha',
-            'title' => 'Project Alpha',
         ]);
     }
 
@@ -74,7 +72,7 @@ class AdminProjectTest extends TestCase
         $response = $this->getJson("/api/admin/projects/{$project->id}");
 
         $response->assertStatus(200)
-            ->assertJsonPath('data.title', 'Read Me Project');
+            ->assertJsonPath('data.title.id', 'Read Me Project');
     }
 
     public function test_authenticated_user_can_update_project(): void
@@ -99,11 +97,11 @@ class AdminProjectTest extends TestCase
         $response = $this->putJson("/api/admin/projects/{$project->id}", $payload);
 
         $response->assertStatus(200)
-            ->assertJsonPath('data.title', 'New Updated Title');
+            ->assertJsonPath('data.title.id', 'New Updated Title');
 
         $this->assertDatabaseHas('projects', [
             'id' => $project->id,
-            'title' => 'New Updated Title',
+            'slug' => 'old-title',
         ]);
     }
 
@@ -176,7 +174,7 @@ class AdminProjectTest extends TestCase
         $response = $this->postJson('/api/admin/projects', $payload);
         $response->assertStatus(201);
 
-        $savedDesc = Project::where('slug', 'sanitize-test')->value('description');
+        $savedDesc = Project::where('slug', 'sanitize-test')->first()->getTranslation('description', 'id');
 
         $this->assertStringNotContainsString('<script>', $savedDesc);
         $this->assertStringNotContainsString('onclick', $savedDesc);
@@ -216,11 +214,11 @@ class AdminProjectTest extends TestCase
         ]);
 
         $payload = [
-            'title' => $project->title,
+            'title' => $project->getTranslation('title', 'id'),
             'slug' => $project->slug,
-            'summary' => $project->summary,
+            'summary' => $project->getTranslation('summary', 'id'),
             'category' => $project->category,
-            'role' => $project->role,
+            'role' => $project->getTranslation('role', 'id'),
             'year' => $project->year,
             'status' => 'published',
             'images' => [
@@ -252,7 +250,7 @@ class AdminProjectTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonCount(1, 'data')
-            ->assertJsonPath('data.0.title', 'ERP Draft');
+            ->assertJsonPath('data.0.title.id', 'ERP Draft');
     }
 
     public function test_draft_projects_do_not_appear_in_public_api(): void

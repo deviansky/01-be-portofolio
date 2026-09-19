@@ -3,9 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Education extends Model
 {
+    use HasTranslations;
+
+    public array $translatable = [
+        'degree',
+        'field',
+        'description',
+    ];
+
     protected $table = 'educations';
 
     protected $fillable = [

@@ -17,9 +17,12 @@ class UpdateProjectRequest extends FormRequest
         $routeParam = $this->route('id') ?? $this->route('project');
         $projectId = is_object($routeParam) ? $routeParam->id : $routeParam;
 
-        if (empty($this->slug) && ! empty($this->title)) {
+        $titleVal = $this->input('title');
+        $titleString = is_array($titleVal) ? ($titleVal['id'] ?? $titleVal['en'] ?? '') : $titleVal;
+
+        if (empty($this->slug) && ! empty($titleString)) {
             $this->merge([
-                'slug' => StoreProjectRequest::generateUniqueSlug($this->title, $projectId),
+                'slug' => StoreProjectRequest::generateUniqueSlug($titleString, $projectId),
             ]);
         }
     }
@@ -30,12 +33,16 @@ class UpdateProjectRequest extends FormRequest
         $projectId = is_object($routeParam) ? $routeParam->id : $routeParam;
 
         return [
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required'],
+            'title.id' => ['nullable', 'string', 'max:255'],
+            'title.en' => ['nullable', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', Rule::unique('projects', 'slug')->ignore($projectId)],
-            'summary' => ['required', 'string', 'max:500'],
-            'description' => ['nullable', 'string'],
+            'summary' => ['required'],
+            'summary.id' => ['nullable', 'string'],
+            'summary.en' => ['nullable', 'string'],
+            'description' => ['nullable'],
             'category' => ['required', 'string', 'max:50'],
-            'role' => ['nullable', 'string', 'max:100'],
+            'role' => ['nullable'],
             'year' => ['required', 'integer', 'min:2000', 'max:2100'],
             'stack' => ['nullable', 'array'],
             'highlights' => ['nullable', 'array'],
@@ -51,4 +58,3 @@ class UpdateProjectRequest extends FormRequest
         ];
     }
 }
-

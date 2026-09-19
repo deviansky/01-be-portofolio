@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/** @mixin \App\Models\Project */
 class AdminProjectResource extends JsonResource
 {
     public function toArray(Request $request): array
@@ -16,15 +17,17 @@ class AdminProjectResource extends JsonResource
                 : asset('storage/' . ltrim($this->thumbnail_path, '/'));
         }
 
+        $enTitle = $this->getTranslation('title', 'en', false);
+
         return [
             'id' => $this->id,
             'slug' => $this->slug,
-            'title' => $this->title,
-            'summary' => $this->summary,
-            'description' => $this->description,
+            'title' => $this->getTranslations('title'),
+            'summary' => $this->getTranslations('summary'),
+            'description' => $this->getTranslations('description'),
+            'role' => $this->getTranslations('role'),
             'highlights' => $this->highlights ?? [],
             'category' => $this->category,
-            'role' => $this->role,
             'stack' => $this->stack ?? [],
             'year' => (int) $this->year,
             'thumbnail_path' => $this->thumbnail_path,
@@ -35,6 +38,7 @@ class AdminProjectResource extends JsonResource
             'is_confidential' => (bool) $this->is_confidential,
             'status' => $this->status,
             'sort_order' => (int) $this->sort_order,
+            'has_english' => ! empty($enTitle),
             'created_at' => $this->created_at?->toISOString(),
             'updated_at' => $this->updated_at?->toISOString(),
             'images' => $this->whenLoaded('images', function () {

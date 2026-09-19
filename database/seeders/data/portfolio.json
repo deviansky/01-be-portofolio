@@ -1,340 +1,535 @@
 {
-  "profile": {
-    "name": "David Reza Widhiwipati",
-    "short_name": "David Reza W.",
-    "headline": "Fullstack Developer",
-    "tagline": "Saya membangun sistem yang dipakai tim operasional setiap hari: modul ERP, aplikasi untuk tim lapangan, dan platform CRM berbasis web.",
-    "bio": [
-      "Fullstack developer yang terbiasa dengan sistem berskala perusahaan. Sehari-hari saya mengerjakan modul ERP dengan Laravel dan React, aplikasi mobile React Native untuk tim sales di lapangan, sekaligus menjadi maintainer dan code reviewer lintas proyek.",
-      "Saat ini saya mahasiswa tingkat akhir D4 Teknologi Rekayasa Perangkat Lunak di Sekolah Vokasi IPB University."
+    "profile": {
+        "name": "David Reza Widhiwipati",
+        "short_name": "David Reza W.",
+        "headline": "Fullstack Developer",
+        "tagline": "Saya seorang software developer yang berfokus pada pengembangan aplikasi web dan mobile, dengan pengalaman membangun solusi digital untuk mendukung kebutuhan dan proses bisnis.",
+        "bio": [
+            "Fullstack developer yang terbiasa dengan sistem berskala perusahaan. Sehari-hari saya mengerjakan modul ERP dengan Laravel dan React, aplikasi mobile React Native untuk tim sales di lapangan, sekaligus menjadi maintainer dan code reviewer lintas proyek.",
+            "Saat ini saya mahasiswa tingkat akhir D4 Teknologi Rekayasa Perangkat Lunak di Sekolah Vokasi IPB University."
+        ],
+        "location": "Indonesia",
+        "email": "",
+        "phone": "",
+        "avatar_url": "",
+        "cv_url": "",
+        "socials": {
+            "github": "",
+            "linkedin": "",
+            "instagram": ""
+        },
+        "available_for_work": true,
+        "focus_areas": [
+            {
+                "title": "Modul ERP",
+                "detail": "Laravel + React"
+            },
+            {
+                "title": "Aplikasi tim lapangan",
+                "detail": "React Native"
+            },
+            {
+                "title": "Platform CRM",
+                "detail": "Web"
+            }
+        ]
+    },
+    "skills": [
+        {
+            "id": 1,
+            "name": "React",
+            "category": "frontend"
+        },
+        {
+            "id": 2,
+            "name": "Tailwind CSS",
+            "category": "frontend"
+        },
+        {
+            "id": 3,
+            "name": "Figma",
+            "category": "frontend"
+        },
+        {
+            "id": 4,
+            "name": "Node.js",
+            "category": "backend"
+        },
+        {
+            "id": 5,
+            "name": "Express.js",
+            "category": "backend"
+        },
+        {
+            "id": 6,
+            "name": "Flask",
+            "category": "backend"
+        },
+        {
+            "id": 7,
+            "name": "Power BI",
+            "category": "visual_data"
+        },
+        {
+            "id": 8,
+            "name": "Python",
+            "category": "ml_cv"
+        },
+        {
+            "id": 9,
+            "name": "TensorFlow",
+            "category": "ml_cv"
+        },
+        {
+            "id": 10,
+            "name": "OpenCV",
+            "category": "ml_cv"
+        },
+        {
+            "id": 11,
+            "name": "Git",
+            "category": "tools"
+        },
+        {
+            "id": 12,
+            "name": "Unity",
+            "category": "tools"
+        },
+        {
+            "id": 13,
+            "name": "Figma",
+            "category": "tools"
+        },
+        {
+            "id": 14,
+            "name": "Self-Learning",
+            "category": "soft_skill"
+        },
+        {
+            "id": 15,
+            "name": "Teamwork & Collaboration",
+            "category": "soft_skill"
+        },
+        {
+            "id": 16,
+            "name": "Communication Skills",
+            "category": "soft_skill"
+        }
     ],
-    "location": "Indonesia",
-    "email": "",
-    "phone": "",
-    "avatar_url": "",
-    "cv_url": "",
-    "socials": {
-      "github": "",
-      "linkedin": "",
-      "instagram": ""
-    },
-    "available_for_work": true,
-    "focus_areas": [
-      {
-        "title": "Modul ERP",
-        "detail": "Laravel + React"
-      },
-      {
-        "title": "Aplikasi tim lapangan",
-        "detail": "React Native"
-      },
-      {
-        "title": "Platform CRM",
-        "detail": "Web"
-      }
-    ]
-  },
-  "skills": [
-    {
-      "id": 1,
-      "name": "React",
-      "category": "frontend"
-    },
-    {
-      "id": 2,
-      "name": "Vite",
-      "category": "frontend"
-    },
-    {
-      "id": 3,
-      "name": "JavaScript",
-      "category": "frontend"
-    },
-    {
-      "id": 4,
-      "name": "TypeScript",
-      "category": "frontend"
-    },
-    {
-      "id": 5,
-      "name": "Bootstrap / React Bootstrap",
-      "category": "frontend"
-    },
-    {
-      "id": 6,
-      "name": "Laravel",
-      "category": "backend"
-    },
-    {
-      "id": 7,
-      "name": "PHP",
-      "category": "backend"
-    },
-    {
-      "id": 8,
-      "name": "REST API",
-      "category": "backend"
-    },
-    {
-      "id": 9,
-      "name": "Role-based access control",
-      "category": "backend"
-    },
-    {
-      "id": 10,
-      "name": "React Native CLI",
-      "category": "mobile"
-    },
-    {
-      "id": 11,
-      "name": "WatermelonDB (offline-first)",
-      "category": "mobile"
-    },
-    {
-      "id": 12,
-      "name": "MySQL",
-      "category": "database"
-    },
-    {
-      "id": 13,
-      "name": "Git",
-      "category": "tools"
-    },
-    {
-      "id": 14,
-      "name": "Code review",
-      "category": "tools"
-    }
-  ],
-  "projects": [
-    {
-      "id": 1,
-      "slug": "tap-sales-erp",
-      "title": "TAP Sales ERP",
-      "summary": "Sistem ERP distribusi untuk PT Mitra Indo Maju: pembelian, penerimaan barang, delivery order, dan mutasi stok.",
-      "category": "erp",
-      "role": "Fullstack Developer & code reviewer",
-      "stack": [
-        "Laravel",
-        "React",
-        "Vite",
-        "MySQL"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": true,
-      "is_confidential": true,
-      "year": 2026,
-      "description": "ERP multi-modul yang menangani alur barang dari pembelian sampai pengiriman. Saya mengerjakan modul di sisi backend dan frontend, termasuk alur penerimaan barang dari gudang berikat ke gudang utama, delivery order transfer dan konsinyasi, serta alur approval dan mutasi stoknya.",
-      "highlights": [
-        "Delivery order transfer dan konsinyasi dalam satu tabel dengan tipe sebagai pembeda.",
-        "Penerimaan barang multi-RO digabung menjadi satu dokumen penerimaan gudang utama.",
-        "Mutasi stok baru dicatat saat approval, bukan saat dokumen dibuat."
-      ],
-      "images": []
-    },
-    {
-      "id": 2,
-      "slug": "tap-sales-forces",
-      "title": "Modul Sales Forces",
-      "summary": "Modul canvassing: alokasi stok harian, surat jalan, setoran, dan serah terima uang dari salesman sampai team leader.",
-      "category": "erp",
-      "role": "Fullstack Developer",
-      "stack": [
-        "Laravel",
-        "React",
-        "React Native",
-        "MySQL"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": true,
-      "is_confidential": true,
-      "year": 2026,
-      "description": "Modul untuk tim sales lapangan yang terdiri dari GUI web untuk team leader, admin, dan master data, serta aplikasi mobile untuk salesman. Setiap perpindahan barang dan uang punya kontrol silang di tiap peran.",
-      "highlights": [
-        "Empat peran dengan aliran uang salesman → admin → team leader.",
-        "Konfirmasi foto surat jalan saat tap-out gudang.",
-        "Aturan maker-checker agar satu orang tidak memproses sekaligus memverifikasi setoran yang sama."
-      ],
-      "images": []
-    },
-    {
-      "id": 3,
-      "slug": "journey-plan",
-      "title": "Journey Plan",
-      "summary": "Fitur perencanaan kunjungan outlet di aplikasi Tap Sales, sekaligus topik tugas akhir saya.",
-      "category": "mobile",
-      "role": "Mobile & backend developer",
-      "stack": [
-        "React Native",
-        "Laravel",
-        "MySQL"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": false,
-      "is_confidential": true,
-      "year": 2026,
-      "description": "TODO: jelaskan masalah yang diselesaikan Journey Plan, siapa penggunanya, dan hasilnya.",
-      "highlights": [],
-      "images": []
-    },
-    {
-      "id": 4,
-      "slug": "dompetkita",
-      "title": "DompetKita",
-      "summary": "Aplikasi keuangan pribadi yang tetap jalan tanpa internet.",
-      "category": "mobile",
-      "role": "Solo developer",
-      "stack": [
-        "React Native",
-        "TypeScript",
-        "WatermelonDB"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": true,
-      "is_confidential": false,
-      "year": 2026,
-      "description": "Proyek pribadi: aplikasi pencatat keuangan dengan database lokal WatermelonDB sehingga semua fitur utama tetap bisa dipakai offline.",
-      "highlights": [],
-      "images": []
-    },
-    {
-      "id": 5,
-      "slug": "mim-company-profile",
-      "title": "Website Company Profile MIM",
-      "summary": "Website profil perusahaan dengan katalog produk per kategori minuman.",
-      "category": "web",
-      "role": "Frontend developer",
-      "stack": [
-        "React",
-        "React Bootstrap"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": false,
-      "is_confidential": false,
-      "year": 2026,
-      "description": "Redesain halaman portfolio brand menjadi katalog produk dengan pemilih kategori visual, hero per kategori, dan kartu produk detail.",
-      "highlights": [],
-      "images": []
-    },
-    {
-      "id": 6,
-      "slug": "mim-cms-admin",
-      "title": "CMS Admin MIM",
-      "summary": "Panel admin untuk mengelola konten website perusahaan.",
-      "category": "web",
-      "role": "Frontend developer",
-      "stack": [
-        "React"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": false,
-      "is_confidential": true,
-      "year": 2026,
-      "description": "TODO: lengkapi.",
-      "highlights": [],
-      "images": []
-    },
-    {
-      "id": 7,
-      "slug": "go-to-thailand-lucky-draw",
-      "title": "Lucky Draw \"Go to Thailand\"",
-      "summary": "Frontend publik untuk event undian berhadiah.",
-      "category": "web",
-      "role": "Frontend developer",
-      "stack": [
-        "React"
-      ],
-      "thumbnail_url": "",
-      "repo_url": "",
-      "demo_url": "",
-      "is_featured": false,
-      "is_confidential": false,
-      "year": 2026,
-      "description": "TODO: lengkapi.",
-      "highlights": [],
-      "images": []
-    }
-  ],
-  "experiences": [
-    {
-      "id": 1,
-      "company": "Univerz Teknologi Utama",
-      "position": "Full Stack Developer",
-      "employment_type": "Purnawaktu",
-      "location": "Jakarta Raya, Indonesia",
-      "work_mode": "Di lokasi",
-      "logo_url": null,
-      "started_at": "2026-01-01",
-      "ended_at": null,
-      "is_current": true,
-      "description": "Saat ini, saya bekerja di Univerz dengan tanggung jawab utama mengelola dan memelihara ekosistem website perusahaan.",
-      "highlights": [],
-      "skills": [
-        "Full-Stack Development",
-        "React.js"
-      ]
-    },
-    {
-      "id": 2,
-      "company": "PT Mitra Indo Maju",
-      "position": "Mobile Application Developer Internship",
-      "employment_type": "Magang",
-      "location": "Jakarta Raya, Indonesia",
-      "work_mode": "Di lokasi",
-      "logo_url": null,
-      "started_at": "2025-06-01",
-      "ended_at": "2025-12-31",
-      "is_current": false,
-      "description": "Sebagai Mobile Developer Intern di PT Mitra Indo Maju, saya bertanggung jawab merombak total antarmuka aplikasi seluler secara end-to-end.",
-      "highlights": [],
-      "skills": [
-        "Mobile Application Development",
-        "Mobile Applications"
-      ]
-    }
-  ],
-  "educations": [
-    {
-      "id": 1,
-      "institution": "IPB University",
-      "degree": "D4 Teknologi Rekayasa Perangkat Lunak",
-      "field": null,
-      "location": null,
-      "work_mode": null,
-      "logo_url": null,
-      "started_at": "2022-08-01",
-      "ended_at": "2026-08-31",
-      "description": "Mahasiswa Teknologi Rekayasa Perangkat Lunak di IPB University yang memiliki ketertarikan kuat pada perpaduan pemrograman dan desain multimedia.",
-      "skills": [
-        "Front-End Development",
-        "Back-End Web Development"
-      ]
-    },
-    {
-      "id": 2,
-      "institution": "SMAN 1 Jawilan",
-      "degree": "SMA IPA",
-      "field": null,
-      "location": null,
-      "work_mode": null,
-      "logo_url": null,
-      "started_at": "2018-04-01",
-      "ended_at": "2022-05-31",
-      "description": null,
-      "skills": []
-    }
-  ],
-  "certifications": []
+    "projects": [
+        {
+            "id": 1,
+            "slug": "tap-sales-erp",
+            "title": {
+                "en": "TAP Sales ERP"
+            },
+            "summary": {
+                "en": "Sistem ERP distribusi untuk PT Mitra Indo Maju: pembelian, penerimaan barang, delivery order, dan mutasi stok."
+            },
+            "category": "erp",
+            "role": {
+                "en": "Fullstack Developer & code reviewer"
+            },
+            "stack": [
+                "Laravel",
+                "React",
+                "Vite",
+                "MySQL"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": true,
+            "is_confidential": true,
+            "year": 2026,
+            "description": {
+                "en": "ERP multi-modul yang menangani alur barang dari pembelian sampai pengiriman. Saya mengerjakan modul di sisi backend dan frontend, termasuk alur penerimaan barang dari gudang berikat ke gudang utama, delivery order transfer dan konsinyasi, serta alur approval dan mutasi stoknya."
+            },
+            "highlights": [
+                "Delivery order transfer dan konsinyasi dalam satu tabel dengan tipe sebagai pembeda.",
+                "Penerimaan barang multi-RO digabung menjadi satu dokumen penerimaan gudang utama.",
+                "Mutasi stok baru dicatat saat approval, bukan saat dokumen dibuat."
+            ],
+            "images": []
+        },
+        {
+            "id": 2,
+            "slug": "tap-sales-forces",
+            "title": {
+                "en": "Modul Sales Forces"
+            },
+            "summary": {
+                "en": "Modul canvassing: alokasi stok harian, surat jalan, setoran, dan serah terima uang dari salesman sampai team leader."
+            },
+            "category": "erp",
+            "role": {
+                "en": "Fullstack Developer"
+            },
+            "stack": [
+                "Laravel",
+                "React",
+                "React Native",
+                "MySQL"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": true,
+            "is_confidential": true,
+            "year": 2026,
+            "description": {
+                "en": "Modul untuk tim sales lapangan yang terdiri dari GUI web untuk team leader, admin, dan master data, serta aplikasi mobile untuk salesman. Setiap perpindahan barang dan uang punya kontrol silang di tiap peran."
+            },
+            "highlights": [
+                "Empat peran dengan aliran uang salesman → admin → team leader.",
+                "Konfirmasi foto surat jalan saat tap-out gudang.",
+                "Aturan maker-checker agar satu orang tidak memproses sekaligus memverifikasi setoran yang sama."
+            ],
+            "images": []
+        },
+        {
+            "id": 5,
+            "slug": "mim-company-profile",
+            "title": {
+                "en": "Company Profile PT Mitra Indo Maju",
+                "id": "Company Profile PT Mitra Indo Maju"
+            },
+            "summary": {
+                "en": "Developed and maintained a WordPress-based company profile website, implementing requested changes and enhancing the homepage and other website pages.",
+                "id": "Pengembangan dan pemeliharaan website company profile berbasis WordPress, meliputi implementasi permintaan perubahan serta pembaruan di halaman."
+            },
+            "category": "web",
+            "role": {
+                "en": "Web Developer",
+                "id": "Web Developer"
+            },
+            "stack": [
+                "WordPress",
+                "Elementor",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "thumbnail_url": "storage/projects/Ik5v6TsK7RebgIaKyET4dMuY4vOKpTUWau37RAL6.png",
+            "repo_url": "",
+            "demo_url": "https://ptmitraindomaju.com/",
+            "is_featured": true,
+            "is_confidential": false,
+            "year": 2025,
+            "description": {
+                "en": "<h2>Project Overview</h2><p>The company profile website of PT Mitra Indo Maju, a beverage distribution company, was already running on WordPress before I joined the team. I was responsible for maintaining and developing the website, including implementing change requests from the team while ensuring that existing pages and components remained unaffected.</p><h2>What I Worked On</h2><ul><li><p>Implemented content and design changes based on the company's requirements.</p></li><li><p>Updated and enhanced the homepage, including the hero section, company information, brand carousel, news, and events.</p></li><li><p>Refined other pages to maintain visual consistency and a cohesive user experience.</p></li><li><p>Developed new sections and features, including a beverage product catalog organized by category and an interactive distributor map.</p></li></ul><h2>Technical Approach</h2><p>The website uses the free version of Elementor, so sections requiring custom layouts and interactions were implemented using custom HTML widgets. CSS was scoped individually for each widget to prevent conflicts between components and ensure that changes did not affect other sections or the WordPress theme's default styling.</p>",
+                "id": "<h2>Gambaran Proyek</h2><p>Website <em>company profile</em> PT Mitra Indo Maju, perusahaan distribusi minuman, telah berjalan menggunakan WordPress sebelum saya bergabung. Saya bertanggung jawab untuk melakukan pemeliharaan dan pengembangan website, termasuk mengimplementasikan permintaan perubahan dari tim tanpa mengganggu halaman dan komponen yang sudah ada.</p><h2>Yang Saya Kerjakan</h2><ul><li><p>Mengimplementasikan perubahan konten dan tampilan sesuai kebutuhan tim perusahaan.</p></li><li><p>Memperbarui dan mengembangkan beranda, meliputi <em>hero section</em>, informasi perusahaan, <em>brand carousel</em>, berita, dan <em>event</em>.</p></li><li><p>Menyesuaikan halaman lainnya untuk menjaga konsistensi desain dan pengalaman pengguna.</p></li><li><p>Mengembangkan fitur dan bagian baru, seperti katalog produk berdasarkan kategori minuman dan peta distributor interaktif.</p></li></ul><h2>Pendekatan Teknis</h2><p>Website menggunakan Elementor versi gratis, sehingga bagian dengan kebutuhan desain dan interaksi khusus diimplementasikan melalui <em>custom HTML widget</em>. CSS pada setiap <em>widget</em> di-<em>scope</em> secara terpisah untuk mencegah konflik antar komponen dan memastikan perubahan tidak memengaruhi bagian lain maupun <em>default styling</em> dari tema WordPress.</p>"
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 3,
+            "slug": "journey-plan",
+            "title": {
+                "en": "Journey Plan"
+            },
+            "summary": {
+                "en": "Fitur perencanaan kunjungan outlet di aplikasi Tap Sales, sekaligus topik tugas akhir saya."
+            },
+            "category": "mobile",
+            "role": {
+                "en": "Mobile & backend developer"
+            },
+            "stack": [
+                "React Native",
+                "Laravel",
+                "MySQL"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": false,
+            "is_confidential": true,
+            "year": 2026,
+            "description": {
+                "en": "TODO: jelaskan masalah yang diselesaikan Journey Plan, siapa penggunanya, dan hasilnya."
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 8,
+            "slug": "uni-tap",
+            "title": {
+                "en": "UNI TAP — Aplikasi Mobile Tim Sales"
+            },
+            "summary": {
+                "en": "Aplikasi mobile untuk salesman lapangan: kunjungan outlet, pengambilan barang di gudang, dan setoran penjualan, terhubung langsung ke sistem ERP."
+            },
+            "category": "mobile",
+            "role": {
+                "en": "Mobile Application Developer (magang)"
+            },
+            "stack": [
+                "React Native",
+                "Laravel",
+                "MySQL"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": true,
+            "is_confidential": true,
+            "year": 2025,
+            "description": {
+                "en": "<h2>Gambaran proyek</h2>\r\n<p>UNI TAP adalah aplikasi mobile yang dipakai salesman setiap hari di lapangan. Aplikasi ini terhubung dengan backend ERP perusahaan, sehingga barang yang dibawa, kunjungan ke outlet, dan uang hasil penjualan tercatat di satu sistem.</p>\r\n<h2>Yang saya kerjakan</h2>\r\n<ul>\r\n<li>Merombak antarmuka aplikasi secara end-to-end dan merancang ulang UI/UX-nya agar lebih mudah dipakai di lapangan.</li>\r\n<li>Mengembangkan fitur Journey Plan untuk perencanaan kunjungan outlet, yang sekaligus menjadi topik tugas akhir saya.</li>\r\n</ul>\r\n<h2>Alur di lapangan</h2>\r\n<ol>\r\n<li>Salesman tap in di gudang dan menerima alokasi barang.</li>\r\n<li>Saat tap out, salesman memotret kuitansi bertanda tangan sebagai bukti serah terima barang.</li>\r\n<li>Salesman mengunjungi outlet dan mencatat penjualan.</li>\r\n<li>Uang hasil penjualan, baik tunai maupun transfer dengan foto bukti, disetor untuk diverifikasi admin.</li>\r\n</ol>\r\n<p><em>Kode dan data aplikasi ini milik perusahaan, sehingga tidak dibagikan publik.</em></p>"
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 4,
+            "slug": "dompetkita",
+            "title": {
+                "en": "DompetKita"
+            },
+            "summary": {
+                "en": "Aplikasi keuangan pribadi yang tetap jalan tanpa internet."
+            },
+            "category": "mobile",
+            "role": {
+                "en": "Solo developer"
+            },
+            "stack": [
+                "React Native",
+                "TypeScript",
+                "WatermelonDB"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": true,
+            "is_confidential": false,
+            "year": 2026,
+            "description": {
+                "en": "Proyek pribadi: aplikasi pencatat keuangan dengan database lokal WatermelonDB sehingga semua fitur utama tetap bisa dipakai offline."
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 9,
+            "slug": "erp-distribusi",
+            "title": {
+                "en": "Sistem ERP Distribusi"
+            },
+            "summary": {
+                "en": "Sistem ERP untuk perusahaan distribusi: penjualan, pembelian, gudang, promo, dan tim sales lapangan. Saat ini masih aktif dikembangkan."
+            },
+            "category": "erp",
+            "role": {
+                "en": "Fullstack Developer"
+            },
+            "stack": [
+                "Laravel",
+                "React",
+                "Vite",
+                "MySQL"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": true,
+            "is_confidential": true,
+            "year": 2026,
+            "description": {
+                "en": "<h2>Gambaran proyek</h2>\r\n<p>ERP berbasis web untuk mengelola alur barang dan uang di perusahaan distribusi, mulai dari pembelian sampai penjualan dan penagihan. Satu backend Laravel melayani aplikasi web untuk kantor dan aplikasi mobile untuk tim sales.</p>\r\n<h2>Modul yang saya kerjakan</h2>\r\n<ul>\r\n<li><strong>Penjualan:</strong> Sales Order dengan logika promo (diskon, FOC, cashback), Sales Invoice beserta cetaknya, dan Sales Return.</li>\r\n<li><strong>Gudang:</strong> Receiving Order (gudang berikat, gudang utama, retur, transfer) dan Delivery Order (transfer dan konsinyasi).</li>\r\n<li><strong>Pembelian:</strong> alur approval Purchase Request, Purchase Order, dan Consignment Order.</li>\r\n<li><strong>Promo:</strong> manajemen diskon, FOC, dan cashback lengkap dengan alur persetujuan.</li>\r\n<li><strong>Tim sales lapangan:</strong> alokasi barang harian ke salesman, kuitansi, dan setoran berjenjang dari salesman ke admin lalu ke team leader.</li>\r\n</ul>\r\n<h2>Keputusan teknis</h2>\r\n<ul>\r\n<li>Mutasi stok dicatat lewat helper terpusat, sehingga setiap perpindahan barang konsisten.</li>\r\n<li>Notifikasi dikirim setelah transaksi database berhasil disimpan, sehingga notifikasi yang gagal tidak membatalkan transaksi.</li>\r\n<li>Hak akses laporan diatur per peran (role-based access control).</li>\r\n<li>Aliran uang di tim sales memakai kontrol silang: admin memverifikasi setoran, team leader mengecek admin.</li>\r\n</ul>\r\n<p><em>Proyek ini masih dalam pengembangan. Kode dan data milik perusahaan, sehingga tidak dibagikan publik.</em></p>"
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 7,
+            "slug": "go-to-thailand-lucky-draw",
+            "title": {
+                "en": "Website Event Lucky Draw \"Go to Thailand\""
+            },
+            "summary": {
+                "en": "Website pendaftaran event undian berhadiah perjalanan ke Thailand, dengan formulir peserta dan syarat mengikuti akun Instagram."
+            },
+            "category": "web",
+            "role": {
+                "en": "Frontend Developer"
+            },
+            "stack": [
+                "React"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": false,
+            "is_confidential": false,
+            "year": 2025,
+            "description": {
+                "en": "<h2>Gambaran proyek</h2>\r\n<p>Website publik untuk event undian berhadiah \"Go to Thailand\" dari PT Mitra Indo Maju. Pengunjung mendaftar sebagai peserta lewat formulir di website.</p>\r\n<h2>Yang saya kerjakan</h2>\r\n<ul>\r\n<li>Membangun halaman publik dan formulir pendaftaran peserta.</li>\r\n<li>Membuat syarat \"ikuti Instagram\" pada checkbox persetujuan: peserta harus mengikuti akun Instagram event sebelum bisa menyetujui syarat dan ketentuan.</li>\r\n</ul>"
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 6,
+            "slug": "mim-cms-admin",
+            "title": {
+                "en": "CMS Admin MIM"
+            },
+            "summary": {
+                "en": "Panel admin untuk mengelola konten website perusahaan."
+            },
+            "category": "web",
+            "role": {
+                "en": "Frontend developer"
+            },
+            "stack": [
+                "React"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "",
+            "demo_url": "",
+            "is_featured": false,
+            "is_confidential": true,
+            "year": 2026,
+            "description": {
+                "en": "TODO: lengkapi."
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 10,
+            "slug": "eduvision-deteksi-buah",
+            "title": {
+                "en": "EduVision Deteksi Buah"
+            },
+            "summary": {
+                "en": "Aplikasi web ramah anak yang mengenali jenis buah dari gambar menggunakan model klasifikasi TensorFlow."
+            },
+            "category": "web",
+            "role": {
+                "en": "Fullstack Developer"
+            },
+            "stack": [
+                "Python",
+                "TensorFlow",
+                "Flask",
+                "Tailwind CSS"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "https://github.com/deviansky/EduVision_FruitDetector",
+            "demo_url": "",
+            "is_featured": false,
+            "is_confidential": false,
+            "year": 2025,
+            "description": {
+                "en": "<h2>Gambaran proyek</h2>\r\n<p>EduVision adalah aplikasi web untuk anak-anak yang mengenali jenis buah dari gambar. Model machine learning dijalankan di server, lalu hasilnya ditampilkan lewat antarmuka yang sederhana dan mudah dipahami anak.</p>\r\n<h2>Cara kerja</h2>\r\n<ol>\r\n<li>Pengguna mengunggah gambar buah lewat halaman web.</li>\r\n<li>Server Flask meneruskan gambar ke model klasifikasi TensorFlow.</li>\r\n<li>Hasil prediksi jenis buah ditampilkan kembali di halaman.</li>\r\n</ol>\r\n<h2>Yang saya kerjakan</h2>\r\n<ul>\r\n<li>Membangun model klasifikasi gambar buah menggunakan TensorFlow.</li>\r\n<li>Mengintegrasikan model ke aplikasi web menggunakan Flask.</li>\r\n<li>Merancang UI yang ramah anak-anak menggunakan Tailwind CSS.</li>\r\n</ul>"
+            },
+            "highlights": [],
+            "images": []
+        },
+        {
+            "id": 11,
+            "slug": "web-administrasi-asrama",
+            "title": {
+                "en": "Web Administrasi Asrama"
+            },
+            "summary": {
+                "en": "Sistem administrasi asrama untuk mengelola data penghuni, pembayaran, dan kegiatan, lengkap dengan REST API."
+            },
+            "category": "web",
+            "role": {
+                "en": "Fullstack Developer"
+            },
+            "stack": [
+                "React",
+                "Node.js",
+                "Tailwind CSS"
+            ],
+            "thumbnail_url": "",
+            "repo_url": "https://github.com/deviansky/FE-WASE-02",
+            "demo_url": "",
+            "is_featured": false,
+            "is_confidential": false,
+            "year": 2025,
+            "description": {
+                "en": "<h2>Gambaran proyek</h2>\r\n<p>Aplikasi web untuk membantu pengelola asrama mengurus data penghuni, pembayaran, dan kegiatan dalam satu tempat. Proyek dikerjakan dalam tim kecil dengan pembagian tugas frontend dan backend.</p>\r\n<h2>Fitur utama</h2>\r\n<ul>\r\n<li>Pengelolaan data penghuni asrama.</li>\r\n<li>Pencatatan pembayaran.</li>\r\n<li>Pengelolaan kegiatan asrama.</li>\r\n<li>Autentikasi pengguna.</li>\r\n</ul>\r\n<h2>Yang saya kerjakan</h2>\r\n<ul>\r\n<li>Membangun antarmuka pengguna yang responsif dengan React dan Tailwind CSS.</li>\r\n<li>Mengembangkan REST API Node.js untuk autentikasi, manajemen data, dan integrasi dengan frontend.</li>\r\n</ul>"
+            },
+            "highlights": [],
+            "images": []
+        }
+    ],
+    "experiences": [
+        {
+            "id": 1,
+            "company": "Univerz Teknologi Utama",
+            "position": "Full Stack Developer",
+            "employment_type": "Purnawaktu",
+            "location": "Jakarta Raya, Indonesia",
+            "work_mode": "Di lokasi",
+            "logo_url": null,
+            "started_at": "2026-01-01",
+            "ended_at": null,
+            "is_current": true,
+            "description": "Saat ini, saya bekerja di Univerz dengan tanggung jawab utama mengelola dan memelihara ekosistem website perusahaan.",
+            "highlights": [],
+            "skills": [
+                "Full-Stack Development",
+                "React.js"
+            ]
+        },
+        {
+            "id": 2,
+            "company": "PT Mitra Indo Maju",
+            "position": "Mobile Application Developer Internship",
+            "employment_type": "Magang",
+            "location": "Jakarta Raya, Indonesia",
+            "work_mode": "Di lokasi",
+            "logo_url": null,
+            "started_at": "2025-06-01",
+            "ended_at": "2025-12-31",
+            "is_current": false,
+            "description": "Sebagai Mobile Developer Intern di PT Mitra Indo Maju, saya bertanggung jawab merombak total antarmuka aplikasi seluler secara end-to-end.",
+            "highlights": [],
+            "skills": [
+                "Mobile Application Development",
+                "Mobile Applications"
+            ]
+        }
+    ],
+    "educations": [
+        {
+            "id": 1,
+            "institution": "IPB University",
+            "degree": "D4 Teknologi Rekayasa Perangkat Lunak",
+            "field": null,
+            "location": null,
+            "work_mode": null,
+            "logo_url": null,
+            "started_at": "2022-08-01",
+            "ended_at": "2026-08-31",
+            "description": "Mahasiswa Teknologi Rekayasa Perangkat Lunak di IPB University yang memiliki ketertarikan kuat pada perpaduan pemrograman dan desain multimedia.",
+            "skills": [
+                "Front-End Development",
+                "Back-End Web Development"
+            ]
+        },
+        {
+            "id": 2,
+            "institution": "SMAN 1 Jawilan",
+            "degree": "SMA IPA",
+            "field": null,
+            "location": null,
+            "work_mode": null,
+            "logo_url": null,
+            "started_at": "2018-04-01",
+            "ended_at": "2022-05-31",
+            "description": null,
+            "skills": []
+        }
+    ],
+    "certifications": []
 }

@@ -23,8 +23,10 @@ class ProjectController extends Controller
 
         if ($search = $request->input('search')) {
             $query->where(function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%")
-                    ->orWhere('summary', 'like', "%{$search}%")
+                $q->where('title->id', 'like', "%{$search}%")
+                    ->orWhere('title->en', 'like', "%{$search}%")
+                    ->orWhere('summary->id', 'like', "%{$search}%")
+                    ->orWhere('summary->en', 'like', "%{$search}%")
                     ->orWhere('stack', 'like', "%{$search}%");
             });
         }
@@ -47,10 +49,10 @@ class ProjectController extends Controller
                 $query->orderBy('created_at', 'asc');
                 break;
             case 'title_asc':
-                $query->orderBy('title', 'asc');
+                $query->orderBy('title->id', 'asc');
                 break;
             case 'title_desc':
-                $query->orderBy('title', 'desc');
+                $query->orderBy('title->id', 'desc');
                 break;
             case 'newest':
             default:
@@ -74,8 +76,16 @@ class ProjectController extends Controller
     {
         $validated = $request->validated();
 
-        if (isset($validated['description'])) {
-            $validated['description'] = ProjectHtmlSanitizer::clean($validated['description']);
+        $validated['title'] = $this->formatTranslatable($validated['title'] ?? null);
+        $validated['summary'] = $this->formatTranslatable($validated['summary'] ?? null);
+
+        if (array_key_exists('description', $validated)) {
+            $validated['description'] = $this->sanitizeDescription($validated['description']);
+            $validated['description'] = $this->formatTranslatable($validated['description']);
+        }
+
+        if (array_key_exists('role', $validated)) {
+            $validated['role'] = $this->formatTranslatable($validated['role']);
         }
 
         $project = DB::transaction(function () use ($validated) {
@@ -105,8 +115,18 @@ class ProjectController extends Controller
         $project = Project::with('images')->findOrFail($id);
         $validated = $request->validated();
 
+        if (array_key_exists('title', $validated)) {
+            $validated['title'] = $this->formatTranslatable($validated['title']);
+        }
+        if (array_key_exists('summary', $validated)) {
+            $validated['summary'] = $this->formatTranslatable($validated['summary']);
+        }
         if (array_key_exists('description', $validated)) {
-            $validated['description'] = ProjectHtmlSanitizer::clean($validated['description']);
+            $validated['description'] = $this->sanitizeDescription($validated['description']);
+            $validated['description'] = $this->formatTranslatable($validated['description']);
+        }
+        if (array_key_exists('role', $validated)) {
+            $validated['role'] = $this->formatTranslatable($validated['role']);
         }
 
         DB::transaction(function () use ($project, $validated) {
@@ -147,5 +167,30 @@ class ProjectController extends Controller
         $project->delete();
 
         return response()->noContent();
+    }
+
+    private function sanitizeDescription($desc)
+    {
+        if (is_array($desc)) {
+            $clean = [];
+            foreach ($desc as $lang => $html) {
+                $clean[$lang] = ProjectHtmlSanitizer::clean($html);
+            }
+            return $clean;
+        }
+        return ProjectHtmlSanitizer::clean($desc);
+    }
+
+    private function formatTranslatable(mixed $value): array
+    {
+        if (is_array($value)) {
+            return array_filter($value, fn ($val) => ! is_null($val) && $val !== '');
+        }
+
+        if (is_string($value) && trim($value) !== '') {
+            return ['id' => $value];
+        }
+
+        return [];
     }
 }

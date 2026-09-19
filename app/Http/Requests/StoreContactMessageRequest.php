@@ -24,6 +24,17 @@ class StoreContactMessageRequest extends FormRequest
 
     public function messages(): array
     {
+        if (app()->getLocale() === 'en') {
+            return [
+                'name.required' => 'Please enter your name.',
+                'email.required' => 'Please enter your email.',
+                'email.email' => 'Please enter a valid email address, e.g. name@domain.com.',
+                'message.required' => 'Please enter your message.',
+                'message.min' => 'Message must be at least 10 characters.',
+                'message.max' => 'Message cannot exceed 5,000 characters.',
+            ];
+        }
+
         return [
             'name.required' => 'Isi nama kamu.',
             'email.required' => 'Isi email kamu.',

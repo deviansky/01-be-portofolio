@@ -20,10 +20,25 @@ class UpdateProjectRequest extends FormRequest
         $titleVal = $this->input('title');
         $titleString = is_array($titleVal) ? ($titleVal['id'] ?? $titleVal['en'] ?? '') : $titleVal;
 
+        $merges = [];
+
         if (empty($this->slug) && ! empty($titleString)) {
-            $this->merge([
-                'slug' => StoreProjectRequest::generateUniqueSlug($titleString, $projectId),
-            ]);
+            $merges['slug'] = StoreProjectRequest::generateUniqueSlug($titleString, $projectId);
+        }
+
+        if ($cat = $this->input('category')) {
+            $catLower = strtolower(trim((string) $cat));
+            if (str_contains($catLower, 'erp')) {
+                $merges['category'] = 'erp';
+            } elseif (str_contains($catLower, 'web')) {
+                $merges['category'] = 'web';
+            } elseif (str_contains($catLower, 'mobile')) {
+                $merges['category'] = 'mobile';
+            }
+        }
+
+        if (! empty($merges)) {
+            $this->merge($merges);
         }
     }
 

@@ -18,10 +18,25 @@ class StoreProjectRequest extends FormRequest
         $titleVal = $this->input('title');
         $titleString = is_array($titleVal) ? ($titleVal['id'] ?? $titleVal['en'] ?? '') : $titleVal;
 
+        $merges = [];
+
         if (empty($this->slug) && ! empty($titleString)) {
-            $this->merge([
-                'slug' => static::generateUniqueSlug($titleString),
-            ]);
+            $merges['slug'] = static::generateUniqueSlug($titleString);
+        }
+
+        if ($cat = $this->input('category')) {
+            $catLower = strtolower(trim((string) $cat));
+            if (str_contains($catLower, 'erp')) {
+                $merges['category'] = 'erp';
+            } elseif (str_contains($catLower, 'web')) {
+                $merges['category'] = 'web';
+            } elseif (str_contains($catLower, 'mobile')) {
+                $merges['category'] = 'mobile';
+            }
+        }
+
+        if (! empty($merges)) {
+            $this->merge($merges);
         }
     }
 
@@ -54,11 +69,11 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => ['required'],
-            'title.id' => ['required_if_is_array:title', 'nullable', 'string', 'max:255'],
+            'title.id' => ['nullable', 'string', 'max:255'],
             'title.en' => ['nullable', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', 'unique:projects,slug'],
             'summary' => ['required'],
-            'summary.id' => ['required_if_is_array:summary', 'nullable', 'string'],
+            'summary.id' => ['nullable', 'string'],
             'summary.en' => ['nullable', 'string'],
             'description' => ['nullable'],
             'category' => ['required', 'string', 'max:50'],
